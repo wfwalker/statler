@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @play.title %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @play.notes %>
+</p>
+
+<p>
+  <b>Premiere year:</b>
+  <%= @play.premiere_year %>
+</p>
+
+<p>
+  <b>Playwright:</b>
+  <%= @play.playwright.name %>
+</p>
+
+<p>
+	<b>Dramatis Personae:</b>
+</p>
+
+<% @play.roles.each { | role | %>
+	<div><%= link_to role.name, role %></div>
+<% } %>
+
+<%= link_to 'Edit', edit_play_path(@play) %> |
+<%= link_to 'Back', plays_path %>

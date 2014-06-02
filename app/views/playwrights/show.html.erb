@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @playwright.name %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @playwright.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_playwright_path(@playwright) %> |
+<%= link_to 'Back', playwrights_path %>
