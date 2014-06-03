@@ -10,6 +10,14 @@
   <%= @role.play.title %>
 </p>
 
+<p>
+	<b>Runs:</b>
+</p>
+
+<% @role.play.runs.each { | run | %>
+	<div><%= link_to "%s %s" % [run.year, run.play.title], run %></div>
+<% } %>
+
 
 <%= link_to 'Edit', edit_role_path(@role) %> |
 <%= link_to 'Back', roles_path %>

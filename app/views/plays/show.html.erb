@@ -28,5 +28,14 @@
 	<div><%= link_to role.name, role %></div>
 <% } %>
 
+<p>
+  <b>Runs:</b>
+</p>
+
+<% @play.runs.each { | run | %>
+  <div><%= link_to "%s %s" % [run.year, run.play.title], run %></div>
+<% } %>
+
+
 <%= link_to 'Edit', edit_play_path(@play) %> |
 <%= link_to 'Back', plays_path %>

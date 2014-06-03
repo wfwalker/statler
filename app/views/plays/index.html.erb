@@ -3,7 +3,6 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Notes</th>
     <th>Premiere year</th>
     <th>Playwright</th>
     <th></th>
@@ -13,10 +12,9 @@
 
 <% @plays.each do |play| %>
   <tr>
-    <td><%= play.title %></td>
-    <td><%= play.notes %></td>
+    <td><%= link_to play.title, play %></td>
     <td><%= play.premiere_year %></td>
-    <td><%= play.playwright.name %></td>
+    <td><%= link_to play.playwright.name, play.playwright %></td>
     <td><%= link_to 'Show', play %></td>
     <td><%= link_to 'Edit', edit_play_path(play) %></td>
     <td><%= link_to 'Destroy', play, method: :delete, data: { confirm: 'Are you sure?' } %></td>
