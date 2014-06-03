@@ -1,0 +1,27 @@
+<h1>Listing runs</h1>
+
+<table>
+  <tr>
+    <th>Year</th>
+    <th>Venue</th>
+    <th>Play</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @runs.each do |run| %>
+  <tr>
+    <td><%= run.year %></td>
+    <td><%= link_to run.venue.name, run.venue %></td>
+    <td><%= link_to run.play.title, run.play %></td>
+    <td><%= link_to 'Show', run %></td>
+    <td><%= link_to 'Edit', edit_run_path(run) %></td>
+    <td><%= link_to 'Destroy', run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Run', new_run_path %>

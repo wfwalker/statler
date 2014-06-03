@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @venue.name %>
+</p>
+
+<p>
+  <b>Organization:</b>
+  <%= @venue.organization %>
+</p>
+
+<p>
+	<b>Runs:</b>
+</p>
+
+<% @venue.runs.each { | run | %>
+	<div><%= link_to "%s %s" % [run.year, run.play.title], run %></div>
+<% } %>
+
+
+<%= link_to 'Edit', edit_venue_path(@venue) %> |
+<%= link_to 'Back', venues_path %>

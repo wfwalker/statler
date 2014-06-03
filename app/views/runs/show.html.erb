@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Year:</b>
+  <%= @run.year %>
+</p>
+
+<p>
+  <b>Venue:</b>
+  <%= @run.venue.name %>
+</p>
+
+<p>
+  <b>Play:</b>
+  <%= @run.play.title %>
+</p>
+
+
+<%= link_to 'Edit', edit_run_path(@run) %> |
+<%= link_to 'Back', runs_path %>
