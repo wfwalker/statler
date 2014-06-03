@@ -33,7 +33,7 @@
 </p>
 
 <% @play.runs.each { | run | %>
-  <div><%= link_to "%s %s" % [run.year, run.play.title], run %></div>
+  <div><%= link_to "%s %s" % [run.year, run.venue.name], run %></div>
 <% } %>
 
 
