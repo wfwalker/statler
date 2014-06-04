@@ -1,40 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @play.title %>
-</p>
+<h1><%= @play.title %> <br /><small><%= @play.playwright.name %></small></h1>
 
-<p>
-  <b>Notes:</b>
-  <%= @play.notes %>
-</p>
+<% if @play.premiere_year then %>
+<p>Premiered <%= @play.premiere_year %></p>
+<% end %>
 
-<p>
-  <b>Premiere year:</b>
-  <%= @play.premiere_year %>
-</p>
+<p><%= @play.notes %></p>
 
-<p>
-  <b>Playwright:</b>
-  <%= @play.playwright.name %>
-</p>
+<div class='row'>
 
-<p>
-	<b>Dramatis Personae:</b>
-</p>
+  <div class='col-md-6'>
+    <h3>Dramatis Personae:</h3>
 
-<% @play.roles.each { | role | %>
-	<div><%= link_to role.name, role %></div>
-<% } %>
+    <% @play.roles.each { | role | %>
+    	<div><%= link_to role.name, role %></div>
+    <% } %>
+  </div>
 
-<p>
-  <b>Runs:</b>
-</p>
+  <div class='col-md-6'>
+    <h3>Runs:</h3>
 
-<% @play.runs.each { | run | %>
-  <div><%= link_to "%s %s" % [run.year, run.venue.name], run %></div>
-<% } %>
+    <% @play.runs.each { | run | %>
+      <div><%= link_to "%s %s" % [run.year, run.venue.name], run %></div>
+    <% } %>
+  </div>
+
+</div>
 
 
 <%= link_to 'Edit', edit_play_path(@play) %> |

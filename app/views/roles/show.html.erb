@@ -1,23 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @role.name %>
-</p>
+<h1><%= @role.name %> <br /><small><%= @role.play.title %></small></h1>
 
-<p>
-  <b>Play:</b>
-  <%= @role.play.title %>
-</p>
-
-<p>
-	<b>Runs:</b>
-</p>
+<h3>Runs:</h3>
 
 <% @role.play.runs.each { | run | %>
 	<div><%= link_to "%s %s" % [run.year, run.venue.name], run %></div>
 <% } %>
-
 
 <%= link_to 'Edit', edit_role_path(@role) %> |
 <%= link_to 'Back', roles_path %>
