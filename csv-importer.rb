@@ -16,12 +16,24 @@ CSV.foreach("shakespeare-characters.csv") do |row|
 	end
 end
 
-shakespeare = Playwright.find_by_name("Shakespeare, William")
+CSV.foreach("other-plays.csv") do |row|
+	playwright = Playwright.find_by_name(row[0])
 
-Play.delete_all()
-Role.delete_all()
-Venue.delete_all()
-Run.delete_all()
+	if (! playwright) then
+		newPlaywright = Playwright.new({ :name => row[0] })
+		newPlaywright.save
+		playwright = newPlaywright
+	end
+
+	play = Play.find_by_title(row[1])
+	if (! play) then
+		newPlay = Play.new({ :title => row[1], :playwright_id => playwright.id })
+		newPlay.save
+	end
+end
+
+shakespeare = Playwright.new({ :name => "Shakespeare, William" })
+shakespeare.save
 
 shakespearePlays.each { | playName | 
     tmp = Play.new({ :title => playName, :playwright_id => shakespeare.id })
