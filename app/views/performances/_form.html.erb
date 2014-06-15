@@ -1,0 +1,26 @@
+<%= form_for(@performance) do |f| %>
+  <% if @performance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@performance.errors.count, "error") %> prohibited this performance from being saved:</h2>
+
+      <ul>
+      <% @performance.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= collection_select("performance", "artist_id", Artist.find(:all, :order => 'name'), :id, :name, {:prompt => true}) %>
+  </div>
+  <div class="field">
+    <%= collection_select("performance", "run_id", Run.find(:all, :order => 'id'), :id, :year_and_play, {:prompt => true}) %>
+  </div>
+  <div class="field">
+    <%= collection_select("performance", "role_id", Role.find(:all, :order => 'id'), :id, :play_and_name, {:prompt => true}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Artist:</b>
+  <%= @performance.artist.name %>
+</p>
+
+<p>
+  <b>Run:</b>
+  <%= @performance.run.year %>
+  <%= @performance.run.venue.name %>
+</p>
+
+<p>
+  <b>Role:</b>
+  <%= @performance.role.name %> in <%= @performance.role.play.title %>
+</p>
+
+
+<%= link_to 'Edit', edit_performance_path(@performance) %> |
+<%= link_to 'Back', performances_path %>

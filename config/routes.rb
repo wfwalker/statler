@@ -1,4 +1,10 @@
 Statler::Application.routes.draw do
+  resources :performances
+
+
+  resources :artists
+
+
   resources :runs
 
 

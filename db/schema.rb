@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140602201824) do
+ActiveRecord::Schema.define(:version => 20140615200837) do
+
+  create_table "artists", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "performances", :force => true do |t|
+    t.integer  "artist_id"
+    t.integer  "run_id"
+    t.integer  "role_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "performances", ["artist_id"], :name => "index_performances_on_artist_id"
+  add_index "performances", ["role_id"], :name => "index_performances_on_role_id"
+  add_index "performances", ["run_id"], :name => "index_performances_on_run_id"
 
   create_table "plays", :force => true do |t|
     t.string   "title"
