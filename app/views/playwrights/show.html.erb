@@ -4,5 +4,17 @@
 
 <p><%= @playwright.notes %></p>
 
+<ul>
+<% @playwright.plays.each { | play | %>
+	<li><%= link_to play.title, play %></li>
+<% } %>
+</ul>
+
+<ul>
+<% @playwright.runs.each { | run | %>
+	<li><%= run.play.title %>, <%= run.venue.name %>, <%= run.year %></li>
+<% } %>
+</ul>
+
 <%= link_to 'Edit', edit_playwright_path(@playwright) %> |
 <%= link_to 'Back', playwrights_path %>
