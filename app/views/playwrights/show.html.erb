@@ -4,11 +4,15 @@
 
 <p><%= @playwright.notes %></p>
 
+<h3>Plays</h3>
+
 <ul>
 <% @playwright.plays.each { | play | %>
 	<li><%= link_to play.title, play %></li>
 <% } %>
 </ul>
+
+<h3>Runs</h3>
 
 <ul>
 <% @playwright.runs.each { | run | %>
