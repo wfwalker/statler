@@ -2,7 +2,7 @@ class RunsController < ApplicationController
   # GET /runs
   # GET /runs.json
   def index
-    @runs = Run.all
+    @runs = Run.find(:all, :order => :year)
 
     respond_to do |format|
       format.html # index.html.erb
