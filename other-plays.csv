@@ -10,7 +10,7 @@ unknown,A Raisin in the Sun
 unknown,A Taste of Honey
 unknown,A Thieves Ballad
 unknown,A Touch of the Poet
-unknown,A View From the Bridge
+"Miller, Arthur",A View From the Bridge
 unknown,A Wrinkle in Time
 unknown,"Ah, Wilderness!"
 unknown,All My Sons
@@ -77,11 +77,11 @@ unknown,Ghost Light
 unknown,Ghosts
 "Solis, Octavio",Gibraltar
 unknown,God's Country
-unknown,Good Person of Szechuan
+"Brecht, Bertolt",Good Person of Szechuan
 "Schenkkan, Robert",Handler
 unknown,Hay Fever
 unknown,Heathen Valley
-unknown,Hedda Gabler
+"Ibsen, Henrik",Hedda Gabler
 unknown,Henry VI, Parts Two and Three
 unknown,Hold Me!
 unknown,Humble Boy
@@ -108,8 +108,8 @@ unknown,Lone Star
 "Cruz, Nilo",Lorca in a Green Dress
 unknown,Lovers Made Men
 "Wilson, August",Ma Rainey's Black Bottom
-unknown,Major Barbara
-unknown,Man and Superman
+"Shaw, George Bernard",Major Barbara
+"Shaw, George Bernard",Man and Superman
 unknown,Media/Macbeth/Cinderella
 unknown,Member of the Wedding
 unknown,Miss Julie
@@ -137,7 +137,7 @@ unknown,Other People's Money
 "Wilder, Thornton",Our Town
 unknown,Paradise Lost
 unknown,Party People
-unknown,Peer Gynt
+"Ibsen, Henrik",Peer Gynt
 "Edgar, David",Pentacost
 "Matura, Mustapha",Playboy of the West Indies
 unknown,Pravda
@@ -148,10 +148,10 @@ unknown,Private Lives
 unknown,Rashomon
 unknown,Restoration
 unknown,Ring Round the Moon
-unknown,Room Service
+"Boretz, John Murray and Allen",Room Service
 unknown,Root of the Mandrake
 "Stoppard, Tom",Rosencrantz and Guildenstern Are Dead
-unknown,Rosmersholm
+"Ibsen, Henrik",Rosmersholm
 "Stoppard, Tom",Rough Crossing
 unknown,Ruined
 unknown,Sailing to Byzantium
@@ -172,14 +172,14 @@ unknown,Stop Kiss
 unknown,Strange Snow
 unknown,Strindberg in Hollywood
 unknown,Taking Steps
-unknown,Tales of the Lost Formicans
+"Congdon, Constance",Tales of the Lost Formicans
 unknown,Tartuffe
 unknown,Ten Little Indians
 unknown,The African Company Presents Richard III
 unknown,The Alchemist
-unknown,The Baltimore Waltz
+"Vogel, Paula",The Baltimore Waltz
 unknown,The Beggar's Opera
-unknown,The Belle's Stratagem
+"Cowley, Hannah",The Belle's Stratagem
 unknown,The Birthday Party
 unknown,The Boy Friend
 unknown,The Cherry Orchard
@@ -187,7 +187,7 @@ unknown,The Clay Cart
 unknown,The Cocoanuts
 unknown,The Colored Museum
 unknown,The Conclusion of Henry VI
-unknown,The Crucible
+"Miller, Arthur",The Crucible
 "Heaney, Seamus",The Cure at Troy
 unknown,The Dance of Death
 unknown,The Darker Face of the Earth
@@ -202,7 +202,7 @@ unknown,The First Part of Henry VI
 unknown,The Further Adventures of Hedda Gabler
 "Williams, Tennessee",The Glass Menagerie
 unknown,The Great Society
-unknown,The Heart of Robin Hood
+"Farr, David",The Heart of Robin Hood
 unknown,The Hostage
 unknown,The House of Blue Leaves
 unknown,The Iceman Cometh
@@ -285,12 +285,12 @@ unknown,Volpone
 "Beckett, Samuel",Waiting for Godot
 "Hudes, Quiara Alegría",Water by the Spoonful
 "Myatt, Julie Marie","Welcome Home, Jenny Sutter"
-unknown,Well
+"Kron, Lisa",Well
 unknown,What the Butler Saw
 "Albee, Edward",Who's Afraid of Virginia Woolf?
 unknown,Who's Happy Now?
 "O'Keeffe, John",Wild Oats
 unknown,Wings
-unknown,Wit
+"Edson, Margaret",Wit
 unknown,Woman in Mind
 unknown,You Can't Take It with You

@@ -84,11 +84,23 @@ osfProductions.each { | year, playTitle, venueName |
 # "Donohue, Dan","Hamlet","Hamlet","Angus Bowmer Theatre",2010
 CSV.foreach("performances.csv") do |row|
 	artist = Artist.find_by_name(row[0])
-	role = Role.find_by_name(row[1])
+	raise "missing artist %s\n" % row[0] if (! artist)
+
 	play = Play.find_by_title(row[2])
+	raise "missing play %s\n" % row[2] if (! play)
+
+	role = Role.find_by_name(row[1])
+	if (! role) then
+		print "Create role %s for %s\n" % [row[1], play.title]
+		role = Role.new({ :play_id => play.id, :name => row[1] })
+		role.save()
+	end
+	raise "missing role %s\n" % row[1] if (! role)
 
 	run = Run.find_by_year_and_play_id(row[4], play.id)
-	print "found run %s for year %s and play %s\n" % [run[0].to_s, row[4], play.title]
+	raise "missing run \'%s\' \'%s\' (%d)\n" % [row[4], play.title, run.length] if (run.length != 1)
+
+	print "found run %s\n" % [run[0].year_and_play]
 
 	tmp = Performance.new({ :run_id => run[0].id, :artist_id => artist.id, :role_id => role.id })
 	tmp.save()
