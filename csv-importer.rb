@@ -80,3 +80,16 @@ osfProductions.each { | year, playTitle, venueName |
 		print "did not find %s\n" % playTitle
 	end
 }
+
+# "Donohue, Dan","Hamlet","Hamlet","Angus Bowmer Theatre",2010
+CSV.foreach("performances.csv") do |row|
+	artist = Artist.find_by_name(row[0])
+	role = Role.find_by_name(row[1])
+	play = Play.find_by_title(row[2])
+
+	run = Run.find_by_year_and_play_id(row[4], play.id)
+	print "found run %s for year %s and play.id %d" % [run[0].to_s, row[4], play.id]
+
+	tmp = Performance.new({ :run_id => run[0].id, :artist_id => artist.id, :role_id => role.id })
+	tmp.save()
+end
