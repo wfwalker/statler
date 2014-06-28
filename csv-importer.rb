@@ -16,6 +16,13 @@ CSV.foreach("shakespeare-characters.csv") do |row|
 	end
 end
 
+CSV.foreach("artists.csv") do |row|
+	artistName = row[0]
+
+    tmp = Artist.new({ :name => artistName })
+    tmp.save
+end
+
 CSV.foreach("other-plays.csv") do |row|
 	playwright = Playwright.find_by_name(row[0])
 
@@ -57,12 +64,10 @@ CSV.foreach("osf-production-history.csv") do |row|
 	end
 end
 
-
 osfVenues.each { | venueName |
 	tmp = Venue.new({ :name => venueName, :organization => 'Oregon Shakespeare Festival'})
 	tmp.save();
 }
-
 
 osfProductions.each { | year, playTitle, venueName | 
 	venue = Venue.find_by_name(venueName)
