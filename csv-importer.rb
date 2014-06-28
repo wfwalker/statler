@@ -88,7 +88,7 @@ CSV.foreach("performances.csv") do |row|
 	play = Play.find_by_title(row[2])
 
 	run = Run.find_by_year_and_play_id(row[4], play.id)
-	print "found run %s for year %s and play.id %d" % [run[0].to_s, row[4], play.id]
+	print "found run %s for year %s and play %s\n" % [run[0].to_s, row[4], play.title]
 
 	tmp = Performance.new({ :run_id => run[0].id, :artist_id => artist.id, :role_id => role.id })
 	tmp.save()
