@@ -26,6 +26,16 @@ class PerformancesController < ApplicationController
   def new
     @performance = Performance.new
 
+    if (params[:artist_id] != "")
+      @performance.artist_id = params[:artist_id]
+    end
+    if (params[:role_id] != "")
+      @performance.role_id = params[:role_id]
+    end
+    if (params[:run_id] != "")
+      @performance.run_id = params[:run_id]
+    end
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @performance }

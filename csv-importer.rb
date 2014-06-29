@@ -2,15 +2,12 @@
 
 require 'CSV'
 
-shakespeareRoles = {}
 shakespearePlays = []
 osfProductions = []
 osfPlays = []
 osfVenues = []
 
 CSV.foreach("shakespeare-characters.csv") do |row|
-	shakespeareRoles[row[1]] = row
-
 	if (! shakespearePlays.include?(row[2])) then
 		shakespearePlays.push(row[2])
 	end
@@ -47,11 +44,11 @@ shakespearePlays.each { | playName |
     tmp.save
 }
 
-shakespeareRoles.each { | name, data |
-	play = Play.find_by_title(data[2])
-	tmp = Role.new({ :name => name, :play_id => play.id })
+CSV.foreach("shakespeare-characters.csv") do |row|
+	play = Play.find_by_title(row[2])
+	tmp = Role.new({ :name => row[1], :play_id => play.id })
 	tmp.save();
-}
+end
 
 CSV.foreach("osf-production-history.csv") do |row|
 	osfProductions.push(row)
