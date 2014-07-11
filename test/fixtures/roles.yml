@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  play: 
+role_one:
+  name: 'RoleOne'
+  play: play_one
 
-two:
-  name: MyString
-  play: 
+role_two:
+  name: 'RoleTwo'
+  play: play_two

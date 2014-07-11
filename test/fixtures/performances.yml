@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  artist: 
-  run: 
-  role: 
+performance_one:
+  artist: artist_one
+  run: run_one
+  role: role_one
 
-two:
-  artist: 
-  run: 
-  role: 
+performance_two:
+  artist: artist_two
+  run: run_two
+  role: role_two

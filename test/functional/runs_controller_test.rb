@@ -2,7 +2,7 @@ require 'test_helper'
 
 class RunsControllerTest < ActionController::TestCase
   setup do
-    @run = runs(:one)
+    @run = runs(:run_one)
   end
 
   test "should get index" do

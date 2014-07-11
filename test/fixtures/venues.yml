@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  organization: MyString
+venue_one:
+  name: 'VenueOne'
+  organization: 'CompanyOne'
 
-two:
-  name: MyString
-  organization: MyString
+venue_two:
+  name: 'VenueTwo'
+  organization: 'CompanyTwo'

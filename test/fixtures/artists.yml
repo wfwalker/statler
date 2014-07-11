@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
+artist_one:
+  name: 'ArtistOne'
 
-two:
-  name: MyString
+artist_two:
+  name: 'ArtistTwo'

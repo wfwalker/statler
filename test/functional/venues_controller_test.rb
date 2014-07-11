@@ -2,7 +2,7 @@ require 'test_helper'
 
 class VenuesControllerTest < ActionController::TestCase
   setup do
-    @venue = venues(:one)
+    @venue = venues(:venue_one)
   end
 
   test "should get index" do

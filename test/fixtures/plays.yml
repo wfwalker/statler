@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  title: MyString
-  notes: MyText
+play_one:
+  title: 'playOne'
+  notes: 'notesOne'
   premiere_year: 1
-  playwright: 
+  playwright: playwright_one
 
-two:
-  title: MyString
-  notes: MyText
+play_two:
+  title: 'playTwo'
+  notes: 'notesTwo'
   premiere_year: 1
-  playwright: 
+  playwright: playwright_two
