@@ -14,6 +14,11 @@ class RolesController < ApplicationController
   # GET /roles/1.json
   def show
     @role = Role.find(params[:id])
+    @performances_by_run_id = {}
+
+    @role.performances.each do |performance|
+      @performances_by_run_id[performance.run.id] = performance
+    end
 
     respond_to do |format|
       format.html # show.html.erb

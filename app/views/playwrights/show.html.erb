@@ -16,7 +16,10 @@
 
 <ul>
 <% @playwright.runs.each { | run | %>
-	<li><%= run.play.title %>, <%= run.venue.name %>, <%= run.year %></li>
+	<li>
+		<%= run.play.title %>, <%= run.venue.name %>, <%= run.year %>
+		<%= link_to 'add perf', new_performance_url(:run_id => run) %>
+	</li>
 <% } %>
 </ul>
 
