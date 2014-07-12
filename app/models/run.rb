@@ -10,4 +10,9 @@ class Run < ActiveRecord::Base
   def Run.find_by_year_and_play_id(inYear, inPlayID)
   	return Run.find_by_sql ['SELECT * FROM runs where play_id=? and year=?', inPlayID, inYear]
   end
+
+	def Run.map_by_play_id(run_list)
+		run_list.inject({}) { | map, run |
+		   map[run.play_id] ? map[run.play_id] << run : map[run.play_id] = [run] ; map }
+	end
 end
