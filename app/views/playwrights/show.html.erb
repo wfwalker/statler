@@ -7,20 +7,24 @@
 <h3>Plays</h3>
 
 <ul>
-<% @playwright.plays.each { | play | %>
-	<li><%= link_to play.title, play %></li>
-<% } %>
+	<% @playwright.plays.each { | play | %>
+		<li><%= link_to play.title, play %></li>
+		<ul>
+			<% @runs_by_play_id[play.id].each { | run | %>
+				<li>
+					<%= run.venue.name %>, <%= run.year %>
+					<%= link_to new_performance_url(:run_id => run) do %>
+						<span class='glyphicon glyphicon-plus-sign' />
+					<% end %>
+				</li>
+			<% } %>
+		</ul>
+	<% } %>
 </ul>
 
 <h3>Runs</h3>
 
 <ul>
-<% @playwright.runs.each { | run | %>
-	<li>
-		<%= run.play.title %>, <%= run.venue.name %>, <%= run.year %>
-		<%= link_to 'add perf', new_performance_url(:run_id => run) %>
-	</li>
-<% } %>
 </ul>
 
 <%= link_to 'Edit', edit_playwright_path(@playwright) %> |

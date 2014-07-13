@@ -15,6 +15,8 @@ class PlaywrightsController < ApplicationController
   def show
     @playwright = Playwright.find(params[:id])
 
+    @runs_by_play_id = Run.map_by_play_id(@playwright.runs)
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @playwright }
