@@ -12,10 +12,9 @@
 
 <% @performances.each do |performance| %>
   <tr>
-    <td><%= performance.artist.name %></td>
-    <td><%= performance.run.year %> <%= performance.run.venue.name %></td>
-    <td><%= performance.role.name %></td>
-    <td><%= link_to 'Show', performance %></td>
+    <td><%= link_to performance.artist.name, performance.artist %></td>
+    <td><%= link_to performance.run.year, performance.run %> <%= link_to performance.run.venue.name, performance.run.venue %></td>
+    <td><%= link_to performance.role.name, performance.role %> in <%= link_to performance.run.play.title, performance.run.play %></td>
     <td><%= link_to 'Edit', edit_performance_path(performance) %></td>
     <td><%= link_to 'Destroy', performance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
