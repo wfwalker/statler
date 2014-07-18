@@ -16,6 +16,10 @@
   <%= @performance.role.name %> in <%= @performance.role.play.title %>
 </p>
 
+<% if (@performance.photo) then %>
+	<p><%= image_tag(@performance.photo.url) %></p>
+<% end %>
+
 
 <%= link_to 'Edit', edit_performance_path(@performance) %> |
 <%= link_to 'Back', performances_path %>

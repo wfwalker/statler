@@ -1,4 +1,7 @@
 Statler::Application.routes.draw do
+  resources :photos
+
+
   resources :performances
 
 

@@ -20,6 +20,9 @@
   <div class="field">
     <%= collection_select("performance", "role_id", Role.find(:all, :order => 'id'), :id, :play_and_name, {:prompt => true}) %>
   </div>
+  <div class="field">
+    <%= collection_select("performance", "photo_id", Photo.find(:all, :order => 'id'), :id, :url, {:prompt => true}) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
