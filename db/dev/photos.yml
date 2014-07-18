@@ -1,0 +1,13 @@
+
+---
+photos:
+  columns:
+  - id
+  - url
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - http://shakespeare.berkeley.edu/gallery2/main.php?g2_view=core.DownloadItem&g2_itemId=14644&g2_serialNumber=4
+    - 2014-07-18 00:58:17.000000000 Z
+    - 2014-07-18 00:58:17.000000000 Z

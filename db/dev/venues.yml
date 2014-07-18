@@ -1,0 +1,65 @@
+
+---
+venues:
+  columns:
+  - id
+  - name
+  - organization
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Elizabethan Theatre
+    - Oregon Shakespeare Festival
+    - 2014-06-29 14:00:26.000000000 Z
+    - 2014-06-29 14:00:26.000000000 Z
+  - - 2
+    - Golden Gate International Exposition
+    - Oregon Shakespeare Festival
+    - 2014-06-29 14:00:26.000000000 Z
+    - 2014-06-29 14:00:26.000000000 Z
+  - - 3
+    - Lithia Theatre
+    - Oregon Shakespeare Festival
+    - 2014-06-29 14:00:26.000000000 Z
+    - 2014-06-29 14:00:26.000000000 Z
+  - - 4
+    - Varsity Theatre
+    - Oregon Shakespeare Festival
+    - 2014-06-29 14:00:26.000000000 Z
+    - 2014-06-29 14:00:26.000000000 Z
+  - - 5
+    - Shakespeare at Stanford
+    - Oregon Shakespeare Festival
+    - 2014-06-29 14:00:26.000000000 Z
+    - 2014-06-29 14:00:26.000000000 Z
+  - - 6
+    - Angus Bowmer Theatre
+    - Oregon Shakespeare Festival
+    - 2014-06-29 14:00:26.000000000 Z
+    - 2014-06-29 14:00:26.000000000 Z
+  - - 7
+    - Christian Science Church
+    - Oregon Shakespeare Festival
+    - 2014-06-29 14:00:26.000000000 Z
+    - 2014-06-29 14:00:26.000000000 Z
+  - - 8
+    - Black Swan
+    - Oregon Shakespeare Festival
+    - 2014-06-29 14:00:26.000000000 Z
+    - 2014-06-29 14:00:26.000000000 Z
+  - - 9
+    - Tao House
+    - Oregon Shakespeare Festival
+    - 2014-06-29 14:00:26.000000000 Z
+    - 2014-06-29 14:00:26.000000000 Z
+  - - 10
+    - New Theatre
+    - Oregon Shakespeare Festival
+    - 2014-06-29 14:00:26.000000000 Z
+    - 2014-06-29 14:00:26.000000000 Z
+  - - 11
+    - Thomas Theatre
+    - Oregon Shakespeare Festival
+    - 2014-06-29 14:00:26.000000000 Z
+    - 2014-06-29 14:00:26.000000000 Z
