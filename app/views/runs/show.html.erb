@@ -5,7 +5,16 @@
 <h3>Dramatis Personae:</h3>
 
 <% @run.play.roles.each { | role | %>
-	<div><%= link_to role.name, role %></div>
+	<div>
+		<%= link_to role.name, role %>
+		<% if @performances_by_role_id[role.id] %>
+			: <%= link_to @performances_by_role_id[role.id].artist.name, @performances_by_role_id[role.id] %>
+		<% else %>
+			<%= link_to new_performance_url(:run_id => @run.id, :role_id => role.id) do %>
+				<span class='glyphicon glyphicon-plus-sign' />
+			<% end %>			
+		<% end %>
+	</div>
 <% } %>
 
 <%= link_to 'Edit', edit_run_path(@run) %> |

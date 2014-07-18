@@ -15,6 +15,8 @@ class RunsController < ApplicationController
   def show
     @run = Run.find(params[:id])
 
+    @performances_by_role_id = Performance.map_by_role_id(@run.performances)
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @run }
