@@ -31,6 +31,10 @@ class RolesController < ApplicationController
   def new
     @role = Role.new
 
+    if (params[:play_id] != "")
+      @role.play_id = params[:play_id]
+    end    
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @role }
