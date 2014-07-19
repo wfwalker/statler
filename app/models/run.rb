@@ -2,6 +2,7 @@ class Run < ActiveRecord::Base
   belongs_to :venue
   belongs_to :play
   has_many :performances
+  has_many :photos, :through => :performances
   attr_accessible :year, :venue_id, :play_id
 
   def year_and_play
