@@ -1,21 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @run.play.title %><br /><small><%= @run.play.playwright.name %><br /><%= @run.venue.name %>, <%= @run.year %></small></h1>
+<div class='row'>
+	<div class='col-md-12'>
+		<h1><%= @run.play.title %><br /><small><%= @run.play.playwright.name %><br /><%= @run.venue.name %>, <%= @run.year %></small></h1>
 
-<h3>Dramatis Personae:</h3>
+		<h3>Dramatis Personae:</h3>
 
-<% @run.play.roles.each { | role | %>
-	<div>
-		<%= link_to role.name, role %>
-		<% if @performances_by_role_id[role.id] %>
-			: <%= link_to @performances_by_role_id[role.id].artist.name, @performances_by_role_id[role.id] %>
-		<% else %>
-			<%= link_to new_performance_url(:run_id => @run.id, :role_id => role.id) do %>
-				<span class='glyphicon glyphicon-plus-sign' />
-			<% end %>			
-		<% end %>
+		<% @run.play.roles.each { | role | %>
+			<div>
+				<%= link_to role.name, role %>
+				<% if @performances_by_role_id[role.id] %>
+					: <%= link_to @performances_by_role_id[role.id].artist.name, @performances_by_role_id[role.id] %>
+				<% else %>
+					<%= link_to new_performance_url(:run_id => @run.id, :role_id => role.id) do %>
+						<span class='glyphicon glyphicon-plus-sign' />
+					<% end %>			
+				<% end %>
+			</div>
+		<% } %>
 	</div>
-<% } %>
+</div>
+
+<div class='row'>
+  <div class='col-md-12'>
+    <% @run.photos.each { | photo | %>
+      <div><%= image_tag(photo.url, :width => 320) %></div>
+    <% } %>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_run_path(@run) %> |
 <%= link_to 'Back', runs_path %>

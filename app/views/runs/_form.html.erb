@@ -13,17 +13,17 @@
 
   <div class="field">
     <%= f.label :year %><br />
-    <%= f.number_field :year %>
+    <%= f.number_field :year, :class => 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :venue %><br />
-    <%= f.text_field :venue %>
+    <%= collection_select("run", "venue_id", Venue.find(:all, :order => 'name'), :id, :name, {:prompt => true}, {:class => 'form-control'}) %>
   </div>
   <div class="field">
     <%= f.label :play %><br />
-    <%= f.text_field :play %>
+    <%= collection_select("run", "play_id", Play.find(:all, :order => 'title'), :id, :title, {:prompt => true}, {:class => 'form-control'}) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Save', :class => 'btn btn-primary' %>
   </div>
 <% end %>

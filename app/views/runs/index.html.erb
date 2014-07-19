@@ -1,4 +1,4 @@
-<h1>Listing runs</h1>
+<h1>Runs</h1>
 
 <table class='table'>
   <tr>
@@ -7,15 +7,13 @@
     <th>Play</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @runs.each do |run| %>
   <tr>
-    <td><%= run.year %></td>
+    <td><%= link_to run.year, run %></td>
     <td><%= link_to run.venue.name, run.venue %></td>
     <td><%= link_to run.play.title, run.play %></td>
-    <td><%= link_to 'Show', run %></td>
     <td><%= link_to 'Edit', edit_run_path(run) %></td>
     <td><%= link_to 'Destroy', run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

@@ -7,7 +7,12 @@
 </p>
 
 <% @venue.runs.each { | run | %>
-	<div><%= link_to "%s %s" % [run.year, run.play.title], run %></div>
+	<div>
+		<%= link_to "%s %s" % [run.year, run.play.title], run %>
+        <%= link_to new_performance_url(:run_id => run) do %>
+          <span class='glyphicon glyphicon-plus-sign' />
+        <% end %>
+	</div>
 <% } %>
 
 
