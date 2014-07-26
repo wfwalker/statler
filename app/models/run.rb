@@ -5,6 +5,8 @@ class Run < ActiveRecord::Base
   has_many :photos, :through => :performances
   attr_accessible :year, :venue_id, :play_id
 
+  scope :relevant, :conditions => [ 'runs.year >= 1995' ], :order => 'runs.year'
+
   def year_and_play
   	"#{year} #{play.title}"
   end
