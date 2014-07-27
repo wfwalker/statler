@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Statler</title>
+	<%= stylesheet_link_tag    "application", :media => "all" %>
+	<%= javascript_include_tag '//cdn.jsdelivr.net/jquery/1.10.2/jquery-1.10.2.js' %>
+	<%= stylesheet_link_tag    "//cdn.jsdelivr.net/bootstrap/3.1.1/css/bootstrap.css" %>
+	<%= javascript_include_tag '//cdn.jsdelivr.net/bootstrap/3.1.1/js/bootstrap.min.js' %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Statler</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/plays">Plays</a></li>
+            <li><a href="/playwrights">Playwrights</a></li>
+            <li><a href="/artists">Artists</a></li>
+            <li><a href="/runs">Runs</a></li>
+            <li><a href="/performances">Performances</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="starter-template">
+        <%= yield %>
+      </div>
+    </div><!-- /.container -->
+
+</body>
+</html>

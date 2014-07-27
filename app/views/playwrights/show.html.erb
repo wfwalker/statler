@@ -1,31 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class='row'>
+	<div class='col-md-12'>
+		<p id="notice"><%= notice %></p>
 
-<h1><%= @playwright.name %></h1>
+		<h1><%= @playwright.name %></h1>
 
-<p><%= @playwright.notes %></p>
+		<p><%= @playwright.notes %></p>
 
-<h3>Plays</h3>
+		<% @playwright.plays.each { | play | %>
+			<h4><%= link_to play.title, play %></h4>
 
-<ul>
-	<% @playwright.plays.each { | play | %>
-		<li><%= link_to play.title, play %></li>
-		<ul>
-			<% @runs_by_play_id[play.id].each { | run | %>
-				<li>
-					<%= run.venue.name %>, <%= run.year %>
-					<%= link_to new_performance_url(:run_id => run) do %>
-						<span class='glyphicon glyphicon-plus-sign' />
-					<% end %>
-				</li>
-			<% } %>
-		</ul>
-	<% } %>
-</ul>
+			<% if @runs_by_play_id[play.id] %>
+			<ul class='list-group'>
+				<% @runs_by_play_id[play.id].each { | run | %>
+					<li class='list-group-item'>
+						<%= link_to run.venue.name, run %>, <%= link_to run.year, run %>
+						<%= link_to new_performance_url(:run_id => run) do %>
+							<span class='glyphicon glyphicon-plus-sign' />
+						<% end %>
+					</li>
+				<% } %>
+			</ul>
+			<% end %>
 
-<h3>Runs</h3>
+		<% } %>
 
-<ul>
-</ul>
+		<ol class='breadcrumb'>
+			<li><%= link_to 'Edit', edit_playwright_path(@playwright) %></li>
+			<li><%= link_to 'Back', playwrights_path %></li>
+		</ol>
+	</div>
+</div>
 
-<%= link_to 'Edit', edit_playwright_path(@playwright) %> |
-<%= link_to 'Back', playwrights_path %>

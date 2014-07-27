@@ -2,7 +2,7 @@ class PlaysController < ApplicationController
   # GET /plays
   # GET /plays.json
   def index
-    @plays = Play.find(:all, :order => :title)
+    @plays = Play.find_all_relevant()
 
     respond_to do |format|
       format.html # index.html.erb
