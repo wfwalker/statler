@@ -1,10 +1,9 @@
-<h1>Listing venues</h1>
+<h1>Venues</h1>
 
-<table class='table'>
+<table class='table table-striped'>
   <tr>
     <th>Name</th>
     <th>Organization</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
@@ -13,7 +12,6 @@
   <tr>
     <td><%= link_to venue.name, venue %></td>
     <td><%= venue.organization %></td>
-    <td><%= link_to 'Show', venue %></td>
     <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
     <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

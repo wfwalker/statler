@@ -6,7 +6,7 @@
 	<b>Runs:</b>
 </p>
 
-<% @venue.runs.each { | run | %>
+<% @venue.runs.relevant.each { | run | %>
 	<div>
 		<%= link_to "%s %s" % [run.year, run.play.title], run %>
         <%= link_to new_performance_url(:run_id => run) do %>
