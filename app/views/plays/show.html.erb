@@ -42,7 +42,7 @@
   <div class='col-md-6'>
     <h3>Runs:</h3>
 
-    <% @play.runs.relevant.each { | run | %>
+    <% @play.runs.each { | run | %>
       <div>
         <%= link_to "%s %s" % [run.year, run.venue.name], run %>
         <%= link_to new_performance_url(:play_id => @play, :run_id => run) do %>
