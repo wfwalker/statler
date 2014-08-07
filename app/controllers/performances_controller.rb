@@ -54,7 +54,7 @@ class PerformancesController < ApplicationController
 
     respond_to do |format|
       if @performance.save
-        format.html { redirect_to @performance, notice: 'Performance was successfully created.' }
+        format.html { redirect_to @performance.run, notice: 'Performance was successfully created.' }
         format.json { render json: @performance, status: :created, location: @performance }
       else
         format.html { render action: "new" }
