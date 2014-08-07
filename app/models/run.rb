@@ -2,7 +2,7 @@ class Run < ActiveRecord::Base
   belongs_to :venue
   belongs_to :play
   has_many :performances
-  has_many :photos, :through => :performances
+  has_many :photos, :through => :performances, :uniq => true
   attr_accessible :year, :venue_id, :play_id
 
   scope :relevant, :conditions => [ 'runs.year >= 1995' ], :order => 'runs.year'
