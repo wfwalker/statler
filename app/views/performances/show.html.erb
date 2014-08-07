@@ -2,18 +2,18 @@
 
 <p>
   <b>Artist:</b>
-  <%= @performance.artist.name %>
+  <%= link_to @performance.artist.name, @performance.artist %>
 </p>
 
 <p>
   <b>Run:</b>
-  <%= @performance.run.year %>
-  <%= @performance.run.venue.name %>
+  <%= link_to @performance.run.year, @performance.run %>
+  <%= link_to @performance.run.venue.name, @performance.run %>
 </p>
 
 <p>
   <b>Role:</b>
-  <%= @performance.role.name %> in <%= @performance.role.play.title %>
+  <%= link_to @performance.role.name, @performance.role %> in <%= link_to @performance.role.play.title, @performance.role.play %>
 </p>
 
 <% if (@performance.photo) then %>
