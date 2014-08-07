@@ -1,21 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class='row'>
+	<div class='col-md-12'>
 
-<h1><%= @role.name %> <br /><small><%= @role.play.title %></small></h1>
+		<p id="notice"><%= notice %></p>
 
-<h3>Runs:</h3>
+		<h1><%= @role.name %> <br /><small><%= @role.play.title %> by <%= @role.play.playwright.name %></small></h1>
 
-<% @role.play.runs.each { | run | %>
-	<div>
-		<%= link_to "%s %s" % [run.year, run.venue.name], run %>
-		<% if @performances_by_run_id[run.id] %>
-			: <%= link_to @performances_by_run_id[run.id].artist.name, @performances_by_run_id[run.id] %>
-		<% else %>
-			<%= link_to new_performance_url(:run_id => run, :role_id => @role) do %>
-				<span class='glyphicon glyphicon-plus-sign' />
-			<% end %>
-		<% end %>
+		<h3>Performances:</h3>
+
+		<ol class='list-group'>
+		<% @role.play.runs.each { | run | %>
+			<li class='list-group-item'>
+				<%= link_to "%s %s" % [run.year, run.venue.name], run %>
+				<% if @performances_by_run_id[run.id] %>
+					: <%= link_to @performances_by_run_id[run.id].artist.name, @performances_by_run_id[run.id] %>
+				<% else %>
+					<%= link_to new_performance_url(:run_id => run, :role_id => @role) do %>
+						<span class='glyphicon glyphicon-plus-sign' />
+					<% end %>
+				<% end %>
+			</li>
+		<% } %>
+		</ol>
+
+		<ol class='breadcrumb'>
+			<li><%= link_to 'Edit', edit_role_path(@role) %></li>
+			<li><%= link_to 'Back', roles_path %></li>
+		</ol>
 	</div>
-<% } %>
-
-<%= link_to 'Edit', edit_role_path(@role) %> |
-<%= link_to 'Back', roles_path %>
+</div>
