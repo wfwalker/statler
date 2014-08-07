@@ -2,7 +2,7 @@ class Play < ActiveRecord::Base
 	belongs_to :playwright
 	has_many :runs
 	has_many :roles
-	has_many :photos, :through => :runs
+	has_many :photos, :through => :runs, :uniq => true
 	attr_accessible :notes, :premiere_year, :title, :playwright_id
 
 	def Play.find_all_relevant
