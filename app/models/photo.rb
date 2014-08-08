@@ -1,4 +1,4 @@
 class Photo < ActiveRecord::Base
-	belongs_to :performance
+	has_many :performances
 	attr_accessible :url
 end
