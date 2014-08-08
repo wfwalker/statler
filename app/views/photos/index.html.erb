@@ -1,7 +1,8 @@
-<h1>Listing photos</h1>
+<h1>Photos</h1>
 
-<table>
+<table class='table'>
   <tr>
+    <th></th>
     <th>Url</th>
     <th></th>
     <th></th>
@@ -10,7 +11,19 @@
 
 <% @photos.each do |photo| %>
   <tr>
-    <td><%= photo.url %></td>
+    <td>
+      <%= image_tag(photo.url, :height => 50) %>
+    </td>
+    <td>
+      <%= link_to photo.url, photo.url %>
+      <% photo.performances.each { | a_performance | %>
+        <div>
+          <%= link_to a_performance.artist.name, a_performance.artist %> as
+          <%= link_to a_performance.role.name, a_performance.role %> in <%= link_to a_performance.run.play.title, a_performance.run.play %>,
+          <%= link_to a_performance.run.year, a_performance.run %> <%= link_to a_performance.run.venue.name, a_performance.run.venue %>
+        </div>
+      <% } %>
+    </td>
     <td><%= link_to 'Show', photo %></td>
     <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
     <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
