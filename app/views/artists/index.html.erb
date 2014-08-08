@@ -3,16 +3,19 @@
 <table class='table table-striped'>
   <tr>
     <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Performances</th>
   </tr>
 
 <% @artists.each do |artist| %>
   <tr>
-    <td><%= link_to artist.name, artist %></td>
-    <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
-    <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>
+      <%= link_to artist.name, artist %>
+    </td>
+    <td>
+      <% if artist.performances.count > 0 then %>
+        <%= artist.performances.count %>
+      <% end %>
+    </td>
   </tr>
 <% end %>
 </table>
