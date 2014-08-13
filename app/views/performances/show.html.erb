@@ -17,7 +17,7 @@
 </p>
 
 <% if (@performance.photo) then %>
-	<p><%= image_tag(@performance.photo.url) %></p>
+	<p><%= image_tag(@performance.photo.url, :height => 480) %></p>
 <% end %>
 
 
