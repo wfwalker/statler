@@ -1,20 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class='row'>
+	<div class='col-md-12'>
+		<p id="notice"><%= notice %></p>
 
-<p>
-	<b>Url:</b>
-	<%= @photo.url %>
-</p>
-<p>
-	<%= image_tag(@photo.url, :height => 480) %>
-</p>
+		<p>
+			<b>Url:</b>
+			<%= @photo.url %>
+		</p>
+		<p>
+			<%= image_tag(@photo.url, :height => 480) %>
+		</p>
 
-<% @photo.performances.each { | a_performance | %>
-	<div>
-	  <%= link_to a_performance.artist.name, a_performance.artist %> as
-	  <%= link_to a_performance.role.name, a_performance.role %> in <%= link_to a_performance.run.play.title, a_performance.run.play %>,
-	  <%= link_to a_performance.run.year, a_performance.run %> <%= link_to a_performance.run.venue.name, a_performance.run.venue %>
+		<ul class='list-group'>
+		<% @photo.performances.each { | a_performance | %>
+			<li class='list-group-item'>
+			  <%= link_to a_performance.artist.name, a_performance.artist %> as
+			  <%= link_to a_performance.role.name, a_performance.role %> in <%= link_to a_performance.run.play.title, a_performance.run.play %>,
+			  <%= link_to a_performance.run.year, a_performance.run %> <%= link_to a_performance.run.venue.name, a_performance.run.venue %>
+			</li>
+		<% } %>
+		</ul>
+
+		<ul class='breadcrumb'>
+			<li><%= link_to 'Edit', edit_photo_path(@photo) %></li>
+			<li><%= link_to 'Back', photos_path %></li>
+		</ul>
 	</div>
-<% } %>
-
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+</div>

@@ -7,10 +7,11 @@
 		<p><%= @playwright.notes %></p>
 
 		<% @playwright.plays.each { | play | %>
-			<h4><%= link_to play.title, play %></h4>
+		<div class='panel panel-default'>
+			<div class='panel-heading'><%= link_to play.title, play %></div>
 
+			<div class='panel-content'>
 			<% if @runs_by_play_id[play.id] %>
-			<ul class='list-group'>
 				<% @runs_by_play_id[play.id].each { | run | %>
 					<li class='list-group-item'>
 						<%= link_to run.venue.name, run %>, <%= link_to run.year, run %>
@@ -19,9 +20,10 @@
 						<% end %>
 					</li>
 				<% } %>
-			</ul>
 			<% end %>
+			</div>
 
+		</div>
 		<% } %>
 
 		<ol class='breadcrumb'>
